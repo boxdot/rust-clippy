@@ -248,6 +248,7 @@ mod methods;
 mod minmax;
 mod misc;
 mod misc_early;
+mod missing_case_in_non_exhaustive_pattern;
 mod missing_const_for_fn;
 mod missing_doc;
 mod missing_inline;
@@ -736,6 +737,7 @@ pub fn register_plugins(store: &mut rustc_lint::LintStore, sess: &Session, conf:
         &misc_early::UNNEEDED_WILDCARD_PATTERN,
         &misc_early::UNSEPARATED_LITERAL_SUFFIX,
         &misc_early::ZERO_PREFIXED_LITERAL,
+        &missing_case_in_non_exhaustive_pattern::MISSING_CASE_IN_NON_EXHAUSTIVE_PATTERN,
         &missing_const_for_fn::MISSING_CONST_FOR_FN,
         &missing_doc::MISSING_DOCS_IN_PRIVATE_ITEMS,
         &missing_inline::MISSING_INLINE_IN_PUBLIC_ITEMS,
@@ -1232,6 +1234,7 @@ pub fn register_plugins(store: &mut rustc_lint::LintStore, sess: &Session, conf:
         LintId::of(&methods::MAP_UNWRAP_OR),
         LintId::of(&misc::USED_UNDERSCORE_BINDING),
         LintId::of(&misc_early::UNSEPARATED_LITERAL_SUFFIX),
+        LintId::of(&missing_case_in_non_exhaustive_pattern::MISSING_CASE_IN_NON_EXHAUSTIVE_PATTERN),
         LintId::of(&mut_mut::MUT_MUT),
         LintId::of(&needless_continue::NEEDLESS_CONTINUE),
         LintId::of(&needless_pass_by_value::NEEDLESS_PASS_BY_VALUE),

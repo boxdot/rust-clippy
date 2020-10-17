@@ -1370,6 +1370,13 @@ vec![
         module: "assign_ops",
     },
     Lint {
+        name: "missing_case_in_non_exhaustive_pattern",
+        group: "pedantic",
+        desc: "default lint description",
+        deprecation: None,
+        module: "missing_case_in_non_exhaustive_pattern",
+    },
+    Lint {
         name: "missing_const_for_fn",
         group: "nursery",
         desc: "Lint functions definitions that could be made `const fn`",
